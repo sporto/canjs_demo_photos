@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>Simple CanJS Demo</title>
+	<link rel="stylesheet" href="css/foundation.min.css" />
+	<link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+
+	<div id="main"></div>
+	
+	<script id="template" type="text/mustache">
+		<div class="row">
+			<h1><img src="img/js.png" class="logo" alt="" /> Libraries ({{libraries.length}})</h1>
+		</div>
+
+		<form class="row panel">
+			<div class="large-2 columns">
+				{{^state.isEditing}}
+				<h4>Add new</h4>
+				{{/state.isEditing}}
+
+				{{#state.isEditing}}
+				<h4>Edit {{state.selected.id}}</h4>
+				{{/state.isEditing}}
+			</div>
+			<div class="large-4 columns">
+				<input type="text" class="input_name large-12 columns" />
+			</div>
+			<div class="large-6 columns">
+				{{^state.isEditing}}
+				<button class="button small btn_save">Add</button>
+				{{/state.isEditing}}
+
+				{{#state.isEditing}}
+				<button class="button small btn_save">Save</button>
+				<button class="button small btn_cancel_edit">Cancel</button>
+				{{/state.isEditing}}
+			</div>
+		</form>
+
+
+		<div class="row">
+			<table>
+				<tbody>
+					{{#libraries}}
+					<tr>
+						<td>
+							{{id}}
+						</td>
+						<td>
+							<div class="th"><img src="{{logo}}" alt="" />	</div>
+						</td>
+						<td><strong>{{name}}</strong></td>
+						<td><a href="{{web}}" target="_blank">{{web}}</a></td>
+						<td>
+							<a {{data 'library'}} href="#" class="btn_edit">Edit</a>
+							<a {{data 'library'}} href="#" class="btn_remove">Remove</a>
+						</td>
+					</tr>
+					{{/libraries}}
+				</tbody>
+			</table>
+		</div>
+
+	</script>
+	
+	<script src="js/lib/jquery-1.9.1.min.js"></script>
+	<script src="js/lib/underscore-min.js"></script>
+	<script src="js/lib/can.jquery.js"></script>
+	<script src="js/lib/can.view.mustache.js"></script>
+	<script src="js/lib/can.observe.backup.js"></script>
+	<script src="js/lib/can.fixture.js"></script>
+	<script src="js/fixtures.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>

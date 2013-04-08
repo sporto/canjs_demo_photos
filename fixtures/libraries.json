@@ -1,0 +1,32 @@
+[
+	{
+	  "id" : 1,
+	  "name" : "CanJS",
+	  "web" : "http://canjs.us",
+		"logo": "img/can.png"
+	},
+	{
+	  "id" : 2,
+	  "name" : "AngularJS",
+	  "web" : "http://angularjs.org/",
+		"logo": "img/angular.png"
+	}, 
+	{
+	  "id" : 3,
+	  "name" : "jQuery",
+	  "web" : "http://jquery.com",
+		"logo": "img/jquery.png"
+	},
+	{
+	  "id" : 4,
+	  "name" : "EmberJS",
+	  "web" : "http://emberjs.com/",
+		"logo": "img/ember.png"
+	},
+	{
+	  "id" : 5,
+	  "name" : "Backbone",
+	  "web" : "http://backbonejs.org/",
+		"logo": "img/backbone.png"
+	}
+]
