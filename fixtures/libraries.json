@@ -2,31 +2,46 @@
 	{
 	  "id" : 1,
 	  "name" : "CanJS",
-	  "web" : "http://canjs.us",
-		"logo": "img/can.png"
+	  "logo": "img/can.png"
 	},
 	{
 	  "id" : 2,
 	  "name" : "AngularJS",
-	  "web" : "http://angularjs.org/",
-		"logo": "img/angular.png"
+	  "logo": "img/angular.png"
 	}, 
 	{
 	  "id" : 3,
 	  "name" : "jQuery",
-	  "web" : "http://jquery.com",
 		"logo": "img/jquery.png"
 	},
 	{
 	  "id" : 4,
 	  "name" : "EmberJS",
-	  "web" : "http://emberjs.com/",
 		"logo": "img/ember.png"
 	},
 	{
-	  "id" : 5,
-	  "name" : "Backbone",
-	  "web" : "http://backbonejs.org/",
+		"id" : 5,
+		"name" : "Backbone",
 		"logo": "img/backbone.png"
+	},
+	{
+		"id" : 6,
+		"name" : "Batman",
+		"logo": "img/batman.png"
+	},
+	{
+		"id" : 7,
+		"name" : "Knockout",
+		"logo": "img/knockout.png"
+	},
+	{
+		"id" : 8,
+		"name" : "Mootools",
+		"logo": "img/mootools.png"
+	},
+	{
+		"id" : 9,
+		"name" : "Yui",
+		"logo": "img/yui.png"
 	}
 ]
