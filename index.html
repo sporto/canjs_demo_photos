@@ -6,24 +6,27 @@
 	<link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
-
 	<div id="main"></div>
 	
 	<script id="template" type="text/mustache">
-		<div class="row">
-			<h1><img src="img/js.png" class="logo" alt="" /> Items ({{items.length}})</h1>
-		</div>
+		<div class="row"><div class="large-12 columns">
+				<h1><img src="img/js.png" class="logo" alt="" /> Items ({{items.length}})</h1>
+		</div></div>
+		
+		<div class="row"><div class="large-12 columns">
+			<button class="btn_add button"><i class="icon-plus"></i> Add Random</button>
+			<br>
+		</div></div>
 
-		<div class="row">
+		<div class="row"><div class="large-12 columns">
 			{{#items}}
-				<div class="th radius" href="{{logo}}">
-					<strong>{{name}}</strong>
-					<img src="{{logo}}" width="160" height="160" />
-					<a {{data 'item'}} href="#" class="btn_remove"><i class="icon-trash icon-large"></i></a>
+				<div class="th radius">
+					<img src="{{img}}" width="160" height="160" />
+					<a {{data 'item'}} href="javascript://" class="btn_remove"><i class="icon-trash icon-large"></i></a>
 
 				</div>
 			{{/items}}
-		</div>
+		</div></div>
 
 	</script>
 	

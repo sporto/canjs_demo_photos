@@ -8,6 +8,8 @@
 		update: 	'PUT /items/{id}',
 		destroy: 	'DELETE /items/{id}'
 	}, {});
+	
+	var randoms = ['jquery', 'batman', 'knockout', 'mootools', 'yui', 'meteor', 'node', 'mocha', 'coffeescript', 'serenade', 'moment'];
 
 	var Control = can.Control({
 
@@ -30,22 +32,16 @@
 
 		},
 
-		'.btn_save click': function (ele, ev) {
+		'.btn_add click': function (ele, ev) {
 			var self = this;
-			// get the currently selected model
-			var model = this.state.attr('selected');
-			// store if it is new
-			var isNew = model.isNew();
-			// save it
-			model.save(function (library) {
-				if (isNew) {
-					// if new then append it to the list
-					self.libraries.push(library);
-				}
-
+			
+			var n = _.random(0, randoms.length -1)
+			var img = 'img/' + randoms.splice(n, 1)[0] + '.png';
+			
+			var model = new Item({img: img});
+			model.save(function (item) {
+				self.items.push(item);
 			});
-
-			return false;
 		},
 
 
@@ -53,8 +49,6 @@
 			// get the model from the clicked element and destroy it
 			var item = can.data(ele, 'item');
 			item.destroy();
-			
-			return false;
 		}
 
 	});
