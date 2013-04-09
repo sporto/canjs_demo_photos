@@ -2,11 +2,11 @@
 
 	'use strict';
 
-	var Library = can.Model({
-		findAll: 	"GET /libraries",
-		create: 	'POST /libraries',
-		update: 	'PUT /libraries/{id}',
-		destroy: 	'DELETE /libraries/{id}'
+	var Item = can.Model({
+		findAll: 	"GET /items",
+		create: 	'POST /items',
+		update: 	'PUT /items/{id}',
+		destroy: 	'DELETE /items/{id}'
 	}, {});
 
 	var Control = can.Control({
@@ -15,17 +15,17 @@
 			var self = this;
 
 			// create an empty list to be populated later
-			this.libraries = new Library.List([]);
+			this.items = new Item.List([]);
 
 			// compile the template
-			var template = can.view("#template", {libraries: this.libraries});
+			var template = can.view("#template", {items: this.items});
 			
 			// append the view to the DOM
 			can.$(ele).append(template);
 
 			// load the libraries from the server
-			var pro = Library.findAll({}, function(libraries) {
-				self.libraries.push.apply(self.libraries, libraries);
+			var pro = Item.findAll({}, function(items) {
+				self.items.replace(items);
 			});
 
 		},
@@ -51,8 +51,8 @@
 
 		'.btn_remove click': function (ele, ev) {
 			// get the model from the clicked element and destroy it
-			var library = can.data(ele, 'library');
-			library.destroy();
+			var item = can.data(ele, 'item');
+			item.destroy();
 			
 			return false;
 		}

@@ -2,6 +2,7 @@
 <head>
 	<title>Simple CanJS Demo</title>
 	<link rel="stylesheet" href="css/foundation.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
 	<link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
@@ -10,17 +11,18 @@
 	
 	<script id="template" type="text/mustache">
 		<div class="row">
-			<h1><img src="img/js.png" class="logo" alt="" /> Libraries ({{libraries.length}})</h1>
+			<h1><img src="img/js.png" class="logo" alt="" /> Items ({{items.length}})</h1>
 		</div>
 
 		<div class="row">
-			{{#libraries}}
+			{{#items}}
 				<div class="th radius" href="{{logo}}">
 					<strong>{{name}}</strong>
 					<img src="{{logo}}" width="160" height="160" />
-					<a {{data 'library'}} href="#" class="btn_remove">Remove</a>
+					<a {{data 'item'}} href="#" class="btn_remove"><i class="icon-trash icon-large"></i></a>
+
 				</div>
-			{{/libraries}}
+			{{/items}}
 		</div>
 
 	</script>
